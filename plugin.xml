@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="mtel.debbie.plugins" version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>plugintest</name>
+    <description>Description</description>
+    <js-module name="PluginTest" src="www/PluginTest.js">
+        <clobbers target="PluginTest"/>
+    </js-module>
+    
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PluginTest">
+                <param name="android-package" value="mtel.debbie.cordovaplugin.PluginTest"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/PluginTest.java" target-dir="src/mtel/debbie/cordovaplugin"/>
+    </platform>
+
+        <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PluginTest">
+                <param name="ios-package" value="PluginTest"/>
+            </feature>
+    </config-file>
+    <header-file src="src/ios/PluginTest.h"/>
+    <source-file src="src/ios/PluginTest.m" />
+    </platform>
+</plugin>
